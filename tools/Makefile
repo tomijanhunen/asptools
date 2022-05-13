@@ -1,6 +1,6 @@
 # Tools for ASP under ASPTOOLS
 
-TOOLS=		lpcat
+TOOLS=		lpcat lpshift
 RELOCATE=	relocate.o
 SCC=		scc.o
 
@@ -19,6 +19,9 @@ all: 		$(TOOLS)
 
 lpcat:		$(RELOCATE) $(SCC) lpcat.o
 		$(CC) $(RELOCATE) $(SCC) lpcat.o -o lpcat $(LDFLAGS)
+
+lpshift:	$(RELOCATE) $(SCC) lpshift.o
+		$(CC) $(RELOCATE) $(SCC) lpshift.o -o lpshift $(LDFLAGS)
 
 clean:
 		rm -f *.o

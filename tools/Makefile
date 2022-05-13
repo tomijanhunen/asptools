@@ -1,6 +1,6 @@
 # Tools for ASP under ASPTOOLS
 
-TOOLS=		lpcat.o
+TOOLS=		lpcat
 RELOCATE=	relocate.o
 SCC=		scc.o
 

@@ -41,8 +41,8 @@ void _version_lpcat_c()
 {
   fprintf(stderr, "%s: version information:\n", program_name);
   _version("$RCSfile: lpcat.c,v $",
-	   "$Date: 2021/05/27 08:50:44 $",
-	   "$Revision: 1.27 $");
+	   "$Date: 2022/05/13 11:35:16 $",
+	   "$Revision: 1.28 $");
   _version_symbol_c();
   _version_atom_c();
   _version_rule_c();
@@ -234,7 +234,8 @@ int main(int argc, char **argv)
 	  fprintf(stderr, "%s: no filename/newline found\n", program_name);
 	  exit(-1);
 	} else {
-	  fscanf(meta, "\n");
+	  if(fscanf(meta, "\n"))
+	    fprintf(stderr, "%s: missing newline\n", program_name);
 	}
 	if(option_verbose)
 	  fprintf(out, "%% consulting file '%s'\n", file);

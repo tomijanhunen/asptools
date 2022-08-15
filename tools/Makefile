@@ -1,6 +1,6 @@
 # Tools for ASP under ASPTOOLS
 
-TOOLS=		lpcat lpshift
+TOOLS=		lpcat lpshift planar
 RELOCATE=	relocate.o
 SCC=		scc.o
 
@@ -14,6 +14,7 @@ CC=		gcc
 CCFLAGS=	-g -I$(INC)
 
 LDFLAGS=	-static -L$(LIB) -llp
+SGB_LFLAGS=	-static -lgb
 
 all: 		$(TOOLS)
 
@@ -22,6 +23,9 @@ lpcat:		$(RELOCATE) $(SCC) lpcat.o
 
 lpshift:	$(RELOCATE) $(SCC) lpshift.o
 		$(CC) $(RELOCATE) $(SCC) lpshift.o -o lpshift $(LDFLAGS)
+
+planar:		planar.o
+		$(CC) planar.o -o planar $(SGB_LFLAGS)
 
 clean:
 		rm -f *.o

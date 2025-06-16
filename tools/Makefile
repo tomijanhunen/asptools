@@ -5,6 +5,7 @@ RELOCATE=	relocate.o
 SCC=		scc.o
 
 LPLIB=		../../asplib
+SGLIB=		../../sgb
 
 INC=		$(LPLIB)/liblp
 LIB=		$(LPLIB)/liblp/lib
@@ -14,7 +15,7 @@ CC=		gcc
 CCFLAGS=	-g -I$(INC)
 
 LDFLAGS=	-static -L$(LIB) -llp
-SGB_LFLAGS=	-static -lgb
+SGB_LFLAGS=	-static -L$(SGLIB) -lgb
 
 all: 		$(TOOLS)
 

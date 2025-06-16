@@ -12,7 +12,7 @@ LIB=		$(LPLIB)/liblp/lib
 BIN=		../bin
 
 CC=		gcc
-CCFLAGS=	-g -I$(INC)
+CCFLAGS=	-g -I$(INC) -I$(SGLIB)/sgbdir/include
 
 LDFLAGS=	-static -L$(LIB) -llp
 SGB_LFLAGS=	-static -L$(SGLIB)/lib -lgb

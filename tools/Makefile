@@ -15,7 +15,7 @@ CC=		gcc
 CCFLAGS=	-g -I$(INC)
 
 LDFLAGS=	-static -L$(LIB) -llp
-SGB_LFLAGS=	-static -L$(SGLIB) -lgb
+SGB_LFLAGS=	-static -L$(SGLIB)/lib -lgb
 
 all: 		$(TOOLS)
 
